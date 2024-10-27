@@ -7,7 +7,7 @@ error_reporting(E_ALL | E_STRICT);?>
 
     define('TL_ROOT', dirname(__DIR__));
     define('LOGIN', 'UEL311');
-    define('PASSWORD', 'U31311');
+    define('PASSWORD', getenv('PASSWORD')); // Pas sécurisé, utiliser variable d'environnement
     define('DB_ARTICLES', TL_ROOT.'/db/articles.json');
 
     function connectUser($login = null, $password = null){
