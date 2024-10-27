@@ -4,7 +4,7 @@
 		array_key_exists('id', $_GET) ? $_GET['id'] : null
 	);
 	//si null, rediriger a l'accueil
-	if(is_null($article)){
+	if(is_null($article) OR !count($article)){
 		header('Location:index.php');
 	}
 ?>	
