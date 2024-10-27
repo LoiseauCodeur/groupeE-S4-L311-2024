@@ -24,7 +24,7 @@
 			<div id="wrapper" class="divided">
 				<?php
 					// fonction qui recupere le template de la page
-					getPagesTemplate(
+					getPageTemplate(
 						//Verifie que le parametre "page" existe
 						array_key_exists('page', $_GET) ? $_GET['page'] : null
 					);
