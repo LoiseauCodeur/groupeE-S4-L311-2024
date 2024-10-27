@@ -11,7 +11,7 @@ error_reporting(E_ALL | E_STRICT);?>
 	    if(array_key_exists('login', $_POST) && array_key_exists('password', $_POST)){
 			//verifie que les champs ne sont pas vides
 	    	if(!empty($_POST['login']) && !empty($_POST['password'])){
-	    		$_SESSION['User'] = connectUser($_GET['login'], $_POST['password']);
+	    		$_SESSION['User'] = connectUser($_POST['login'], $_POST['password']);
 
 				//verifie que connecter
 	    		if(!is_null($_SESSION['User'])){
