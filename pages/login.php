@@ -1,10 +1,19 @@
-<?php 
-	$message = null;
-	if($_SERVER["RQUEST_METHOD"] == "POST"){
+<?php
+ini_set('display_errors', 'On');
+error_reporting(E_ALL | E_STRICT);?>
+
+<?php
+	$message = null; // initialisation de la variable
+
+	//verification de la methode post
+	if($_SERVER["REQUEST_METHOD"] == "POST"){
+
 	    if(array_key_exists('login', $_POST) && array_key_exists('password', $_POST)){
+			//verifie que les champs ne sont pas vides
 	    	if(!empty($_POST['login']) && !empty($_POST['password'])){
 	    		$_SESSION['User'] = connectUser($_GET['login'], $_POST['password']);
 
+				//verifie que connecter
 	    		if(!is_null($_SESSION['User'])){
 	    			header("Location:index.php");
 	    		}else{
@@ -12,7 +21,7 @@
 	    		}
 	    	}
 	    }
-	}	
+	}
 ?>
 
 <section class="wrapper style1 align-center">
@@ -24,7 +33,9 @@
 					<a href="index.php" class="button big wide smooth-scroll-middle">Revenir à l'accueil</a></li>
 				</header>
 				<div class="content">
+					<!--affiche le message d'erreur si existe -->
 					<?php echo (!is_null($message) ? "<p>".$message."</p>" : '');?>
+					<!-- formulaire de connexion -->
 					<form method="post" action="#">
 						<div class="fields">
 							<div class="field half">

@@ -1,3 +1,8 @@
+<?php
+	ini_set('display_errors', 'On');
+	error_reporting(E_ALL | E_STRICT);
+?>
+<!-- appel du fichier inc.functions.php-->
 <?php require_once 'inc/inc.functions.php'; ?>
 <!DOCTYPE HTML>
 <!--
@@ -10,6 +15,7 @@
 		<title>Story by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!-- appel du fichier css -->
 		<?php require_once 'inc/inc.css.php'; ?>
 	</head>
 	<body class="is-preload">
@@ -17,13 +23,16 @@
 		<!-- Wrapper -->
 			<div id="wrapper" class="divided">
 				<?php
+					// fonction qui recupere le template de la page
 					getPagesTemplate(
+						//Verifie que le parametre "page" existe
 						array_key_exists('page', $_GET) ? $_GET['page'] : null
 					);
 				?>
-				<?php require_once 'inc/tpls-footer.php'; ?>
+				<!--appel du fichier tpl-footer-->
+				<?php require_once 'inc/tpl-footer.php'; ?>
 			</div>
-
+		<!--appel du fichier js-->
 		<?php require_once 'inc/inc.js.php'; ?>
 
 	</body>
