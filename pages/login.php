@@ -1,4 +1,5 @@
 <?php 
+	//connexion de l'utilisateur, si bons identifiants, connexion et redirection à l'accueil, sinon, reste sur la page connexion et indication d'une erreur
 	$message = null;
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
 	    if(array_key_exists('login', $_POST) && array_key_exists('password', $_POST)){

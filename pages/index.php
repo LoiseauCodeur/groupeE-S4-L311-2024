@@ -12,6 +12,7 @@
 </section>
 
 <?php 
+	//récupértion des articles depuis le Json, et affichage de ceux-ci sur l'accueil
 	$_articles = getArticlesFromJson();
 	if($_articles && count($_articles)){
 		$compteur = 1;

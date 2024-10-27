@@ -1,9 +1,9 @@
 <?php
-	$ka = "ka";
+	//vérification de l'existence de l'article par son ID
 	$article = getArticleById(
 		array_key_exists('id', $_GET) ? $_GET['id'] : null
 	);
-
+	//si null, rediriger a l'accueil
 	if(is_null($article)){
 		header('Location:index.php');
 	}

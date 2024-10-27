@@ -1,4 +1,5 @@
 <?php
+//Fonctions utilisés dans d'autre fichiers, utiles au bon fonctionnement du blog
     session_start();
 
     define('TL_ROOT', dirname(__DIR__));
